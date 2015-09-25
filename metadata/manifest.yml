@@ -1,0 +1,33 @@
+Name: emacs
+
+Cartridge-Short-Name: emacs
+Cartridge-Version: '0.0.1'
+Cartridge-Vendor: mocchi
+
+Display-Name: GNU Emacs 23.1.1
+Description: Emacs for all
+
+Version:  '23.1.1'
+Website: https://www.gnu.org/software/emacs/
+
+Categories:
+  - service
+  - web_framework
+
+Provides:
+- emacs-0.1
+- emacs
+
+Scaling:
+  Min: 1
+  Max: -1
+
+Endpoints:
+  - Private-IP-Name:   HTTP_IP
+    Private-Port-Name: HTTP_PORT
+    Private-Port:      8080
+    Public-Port-Name:  PROXY_HTTP_PORT
+    Mappings:
+      - Frontend:      ""
+        Backend:       ""
+        Options:       { websocket: false }
