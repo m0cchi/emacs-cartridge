@@ -7,7 +7,6 @@ Cartridge-Vendor: mocchi
 Display-Name: GNU Emacs 25.0.50.1
 Description: Emacs for all
 
-Version:  ' 25.0.50'
 Website: https://www.gnu.org/software/emacs/
 
 Categories:
@@ -15,7 +14,7 @@ Categories:
   - web_framework
 
 Provides:
-- emacs-23.1.1
+- emacs-25.0.50.1
 - emacs
 
 Scaling:
