@@ -1,13 +1,13 @@
 Name: emacs
 
 Cartridge-Short-Name: emacs
-Cartridge-Version: '0.0.1'
+Cartridge-Version: '0.0.2'
 Cartridge-Vendor: mocchi
 
-Display-Name: GNU Emacs 23.1.1
+Display-Name: GNU Emacs 25.0.50.1
 Description: Emacs for all
 
-Version:  '23.1.1'
+Version:  ' 25.0.50.1'
 Website: https://www.gnu.org/software/emacs/
 
 Categories:
