@@ -20,7 +20,7 @@ git clone git://git.savannah.gnu.org/emacs.git
 cd emacs
 rm .git
 ./autogen.sh
-./configure --prefix=$OPENSHIFT_EMACS_DIR/ --with-x-toolkit=no --without-toolkit-scroll-bars --without-xaw3d --without-compress-info --without-sound --without-pop --without-xpm --without-tiff --without-rsvg --without-gconf --without-gsettings --without-selinux --without-gpm --without-makeinfo --with-x
+CFLAGS=-static LDFLAGS=-static ./configure --prefix=$OPENSHIFT_EMACS_DIR/ --with-x-toolkit=no --without-toolkit-scroll-bars --without-xaw3d --without-sound --without-pop --without-xpm --without-tiff --without-rsvg --without-gconf --without-gsettings --without-selinux --without-gpm --without-makeinfo --without-x
 make && make install
 cd ../
 
