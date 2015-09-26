@@ -1,1 +1,3 @@
 #!/usr/bin/env bash
+
+nohup $OPENSHIFT_EMACS_DIR/install-emacs.sh >> $OPENSHIFT_EMACS_DIR/log/setup.log &
