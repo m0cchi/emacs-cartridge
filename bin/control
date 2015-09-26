@@ -2,16 +2,16 @@
 
 function start() {
   echo "Starting Emacs application"
-  emacs --version >> $OPENSHIFT_EMACS_DIR/log/emacs-cartridge.log
-  HOME=$OPENSHIFT_EMACS_DIR emacs --daemon >> $OPENSHIFT_EMACS_DIR/log/emacs-cartridge.log
+  PATH==${OPENSHIFT_EMACS_DIR}/bin emacs --version >> $OPENSHIFT_EMACS_DIR/log/emacs-cartridge.log
+  PATH==${OPENSHIFT_EMACS_DIR}/bin HOME=$OPENSHIFT_EMACS_DIR emacs --daemon >> $OPENSHIFT_EMACS_DIR/log/emacs-cartridge.log
   return 0
 }
 
 function stop() {
   echo "Stop Emacs"
   if [ -n "$(pgrep emacs)" ] ; then
-    emacsclient -e '(elnode-stop (string-to-number (getenv "OPENSHIFT_EMACS_HTTP_PORT")))'
-    emacsclient -e '(kill-emacs)'
+    PATH==${OPENSHIFT_EMACS_DIR}/bin emacsclient -e '(elnode-stop (string-to-number (getenv "OPENSHIFT_EMACS_HTTP_PORT")))'
+    PATH==${OPENSHIFT_EMACS_DIR}/bin emacsclient -e '(kill-emacs)'
     echo "kill emacs" >> $OPENSHIFT_EMACS_DIR/log/emacs-cartridge.log
   fi
   return 0
