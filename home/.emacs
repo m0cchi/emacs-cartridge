@@ -27,6 +27,7 @@
 ;; bootstrap
 (server-start)
 (require 'elnode)
+(setq elnode-init-port nil)
 (setq elnode--do-error-logging nil)
 (setq elnode-log-files-directory (concat (getenv "OPENSHIFT_REPO_DIR") "/log"))
 (print (concat "elnode logs :" elnode-log-files-directory "\n"))
