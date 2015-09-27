@@ -1,4 +1,5 @@
 Name: emacs
+Source-Url: git@github.com:openshift-cartridges/clojure-cartridge.git
 
 Cartridge-Short-Name: emacs
 Cartridge-Version: '0.0.3'
