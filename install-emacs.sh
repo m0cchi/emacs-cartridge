@@ -14,4 +14,3 @@ cd ../
 
 # remove working dir
 rm -rf temp
-$OPENSHIFT_EMACS_DIR/bin/control restart
