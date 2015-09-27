@@ -5,3 +5,6 @@ Deploy Emacs application on OpenShift.
 ```
 rhc create-app emacs 'http://cartreflect-claytondev.rhcloud.com/reflect?github=mocchit/emacs-cartridge'
 ```
+
+# Sample
+<http://emacs-mocchi.rhcloud.com/>
