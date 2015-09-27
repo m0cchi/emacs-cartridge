@@ -5,7 +5,7 @@
 
 ;;env
 (defconst +PORT+ (string-to-number (getenv "OPENSHIFT_EMACS_HTTP_PORT")))
-(defconst +IP+ (getenv "OPENSHIFT_EMACS_HTTP_IP"))
+(defconst +HOST+ (getenv "OPENSHIFT_EMACS_HTTP_IP"))
 
 (defvar *dependencies* '(
                          elnode

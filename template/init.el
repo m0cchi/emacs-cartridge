@@ -9,4 +9,4 @@
   <body>Hello, emacs-cartridge</body>
 </html")))
 
-(elnode-start 'handler :port +PORT+ :host "0.0.0.0")
+(elnode-start 'handler :port +PORT+ :host +HOST+)

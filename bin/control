@@ -2,11 +2,9 @@
 
 function start() {
   echo "Starting Emacs application"
-  if [ -n "$(which emacs-25.0.50) 2> /dev/null" ] ; then
+  if [ -e "${OPENSHIFT_EMACS_DIR}/bin/emacs-25.0.50" ] ; then
     PATH=${OPENSHIFT_EMACS_DIR}/bin emacs --version &>> $OPENSHIFT_EMACS_DIR/log/emacs-cartridge.log
-    PATH=${OPENSHIFT_EMACS_DIR}/bin HOME=$OPENSHIFT_EMACS_DIR emacs --daemon &>> $OPENSHIFT_EMACS_DIR/log/emacs-cartridge.log
-  else
-    nohup $OPENSHIFT_EMACS_DIR/install-emacs.sh &>> $OPENSHIFT_EMACS_DIR/log/setup${$!}.log &
+    PATH=${OPENSHIFT_EMACS_DIR}/bin HOME=$OPENSHIFT_EMACS_DIR/home emacs --daemon &>> $OPENSHIFT_EMACS_DIR/log/emacs-cartridge.log
   fi
   return 0
 }
@@ -26,9 +24,14 @@ function status(){
 }
 
 function restart(){
-  stop
-  start
-  return 0
+  if [ -e "${OPENSHIFT_EMACS_DIR}/bin/emacs-25.0.50" ] ; then
+    stop
+    start
+    return 0
+  else
+    nohup $OPENSHIFT_EMACS_DIR/install-emacs.sh &>> $OPENSHIFT_EMACS_DIR/log/setup${$!}.log &
+    return 1
+  fi
 }
 
 function update() {
