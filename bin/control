@@ -12,8 +12,7 @@ function start() {
 function stop() {
   echo "Stop Emacs"
   if [ -n "$(pgrep emacs)" ] ; then
-    PATH=${OPENSHIFT_EMACS_DIR}/bin:$PATH emacsclient -e '(elnode-stop (string-to-number (getenv "OPENSHIFT_EMACS_HTTP_PORT")))'
-    PATH=${OPENSHIFT_EMACS_DIR}/bin:$PATH emacsclient -e '(kill-emacs)'
+    PATH=${OPENSHIFT_EMACS_DIR}/bin:$PATH emacsclient -e "(progn (require 'elnode) (elnode-stop (string-to-number (getenv \"OPENSHIFT_EMACS_HTTP_PORT\"))) (kill-emacs))"
     echo "kill emacs" >> $OPENSHIFT_EMACS_DIR/log/emacs-cartridge.log
   fi
   return 0
