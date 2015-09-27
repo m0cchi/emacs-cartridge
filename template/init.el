@@ -7,6 +7,6 @@
     <title>emacs-cartridge</title>
   </head>
   <body>Hello, emacs-cartridge</body>
-</html")))
+</html>")))
 
 (elnode-start 'handler :port +PORT+ :host +HOST+)
