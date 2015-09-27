@@ -8,3 +8,10 @@ rhc create-app emacs 'http://cartreflect-claytondev.rhcloud.com/reflect?github=m
 
 # Sample
 <http://emacs-mocchi.rhcloud.com/>
+
+# fail?
+```
+message:
+  Creating application 'emacs' ... Server returned an unexpected error code: 504
+```
+retry create app
